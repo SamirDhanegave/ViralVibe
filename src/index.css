@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-accent: #CCFF00;
+  --color-brand-fire: #FF6B00;
+  --color-dark-bg: #0A0A0B;
+  --color-dark-surface: #141416;
+  --color-text-muted: #8E8E93;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-white font-sans antialiased;
+  }
+}
+
+/* Theme Specific Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.neon-border {
+  border-bottom: 2px solid var(--color-brand-accent);
+}
+
+.viral-badge {
+  @apply bg-brand-accent text-black font-[800] px-1.5 py-0.5 rounded text-[10px] uppercase;
+}
+
+.rail-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  @apply text-text-muted text-[11px] tracking-[0.2em] uppercase;
+}
+
+.streak-counter {
+  @apply bg-[#1A1A1D] border border-[#2C2C2E] px-3 py-1.5 rounded-full text-xs flex items-center gap-1.5 font-mono;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px #fff;
+  @apply text-transparent;
+}
